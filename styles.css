@@ -7,3 +7,7 @@
     grid-template-columns: repeat(4, 50px);
     grid-template-rows: repeat(4, 50px);
 }
+
+.colored {
+    background-color: red;
+}
