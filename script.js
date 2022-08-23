@@ -26,8 +26,8 @@ function generate() {
 
     // make grid
     container.style.display = "grid";
-    container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 50px`;
-    container.style.gridTemplateRows = `repeat(${numberOfSquares}, 50px`;
+    container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr`;
+    container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr`;
 }
 
 function color(div) {
