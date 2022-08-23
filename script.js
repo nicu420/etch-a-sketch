@@ -16,7 +16,7 @@ function generate() {
 
     // ask for number and generate
     let numberOfSquares = parseInt(prompt('Enter a number of squares (0-100)'));
-    for (let i = 0; i < numberOfSquares; i++) {
+    for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
         const div = document.createElement('div');
         div.classList.add('square');
         div.addEventListener("mouseover", () => color(div));
@@ -26,8 +26,8 @@ function generate() {
 
     // make grid
     container.style.display = "grid";
-    container.style.gridTemplateColumns = `repeat(${Math.sqrt(numberOfSquares)}, 50px)`;
-    container.style.gridTemplateRows = `repeat(${Math.sqrt(numberOfSquares)}, 50px)`;
+    container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 50px`;
+    container.style.gridTemplateRows = `repeat(${numberOfSquares}, 50px`;
 }
 
 function color(div) {
