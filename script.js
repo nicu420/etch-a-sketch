@@ -1,27 +1,21 @@
 let divs = [];
 const container = document.querySelector('#container');
 
-const ask = document.querySelector('#ask');
+const slider = document.querySelector("#slider");
 
-// start
-let numberOfSquares = 10;
-for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
-    const div = document.createElement('div');
-    div.classList.add('square');
-    div.addEventListener("mouseover", () => div.style.backgroundColor = "grey");
-    div.style.border = "1px solid";
-    divs.push(div);
-    container.appendChild(div);
-}
+const sliderLabel = document.querySelector('#slider-label');
 
-// make grid
-container.style.display = "grid";
-container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr`;
-container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr`;
+let numberOfSquares = slider.value;
 
-// choose number
-ask.addEventListener("click", generate);
+slider.addEventListener('input', () => {
+    numberOfSquares = slider.value;
+    generate();
+})
+
 function generate() {
+    // update grid label text
+    sliderLabel.textContent = `${numberOfSquares} x ${numberOfSquares}`;
+
     // clear dom element
     while (container.firstChild) {
         container.removeChild(container.firstChild);
@@ -30,21 +24,18 @@ function generate() {
     // empty array
     divs = [];
 
-    // ask for number and regenerate
-    numberOfSquares = parseInt(prompt('Enter a number of squares (0-100)'));
-    while (numberOfSquares < 0 || numberOfSquares > 100) {
-        numberOfSquares = parseInt(prompt('Enter a number of squares (0-100)'));
-    }
+    // regenerate
     for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
         const div = document.createElement('div');
         div.classList.add('square');
         div.addEventListener("mouseover", () => div.style.backgroundColor = "grey");
         div.style.border = "1px solid";
+        borders.checked = "true";
         divs.push(div);
         container.appendChild(div);
     }
 
-    // make grid again
+    // make grid
     container.style.display = "grid";
     container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr`;
     container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr`;
@@ -104,3 +95,5 @@ borders.addEventListener('change', () => {
         }
     }
 })
+
+generate();
