@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-direction: row;
@@ -23,8 +27,5 @@ body {
     height: 500px;
     max-width: 70vh;
     max-height: 70vh;
-}
-
-.square {
     border: 1px solid;
 }

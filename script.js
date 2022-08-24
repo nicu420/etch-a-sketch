@@ -3,8 +3,24 @@ const container = document.querySelector('#container');
 
 const ask = document.querySelector('#ask');
 
-ask.addEventListener("click", generate);
+// start
+let numberOfSquares = 10;
+for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
+    const div = document.createElement('div');
+    div.classList.add('square');
+    div.addEventListener("mouseover", () => div.style.backgroundColor = "grey");
+    div.style.border = "1px solid";
+    divs.push(div);
+    container.appendChild(div);
+}
 
+// make grid
+container.style.display = "grid";
+container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr`;
+container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr`;
+
+// choose number
+ask.addEventListener("click", generate);
 function generate() {
     // clear dom element
     while (container.firstChild) {
@@ -14,8 +30,8 @@ function generate() {
     // empty array
     divs = [];
 
-    // ask for number and generate
-    let numberOfSquares = parseInt(prompt('Enter a number of squares (0-100)'));
+    // ask for number and regenerate
+    numberOfSquares = parseInt(prompt('Enter a number of squares (0-100)'));
     while (numberOfSquares < 0 || numberOfSquares > 100) {
         numberOfSquares = parseInt(prompt('Enter a number of squares (0-100)'));
     }
@@ -23,11 +39,12 @@ function generate() {
         const div = document.createElement('div');
         div.classList.add('square');
         div.addEventListener("mouseover", () => div.style.backgroundColor = "grey");
+        div.style.border = "1px solid";
         divs.push(div);
         container.appendChild(div);
     }
 
-    // make grid
+    // make grid again
     container.style.display = "grid";
     container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr`;
     container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr`;
@@ -73,3 +90,17 @@ function clean() {
         divs[i].style.backgroundColor = "";
     }
 }
+
+// borders 
+const borders = document.querySelector('#borders');
+borders.addEventListener('change', () => {
+    if (!borders.checked) {
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].style.border = "";
+        }
+    } else {
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].style.border = "1px solid";
+        }
+    }
+})
