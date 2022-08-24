@@ -34,5 +34,5 @@ function generate() {
 }
 
 function color(div) {
-    div.classList.add('colored');
+    div.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
