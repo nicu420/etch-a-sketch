@@ -9,19 +9,34 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     </link>
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/0cef27e790.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="buttons">
-        <label id="slider-label"></label>
-        <input type="range" min="1" max="64" value="10" id="slider">
-        <button id="grey">Classic</button>
-        <button id="rainbow">Rainbow</button>
-        <button id="eraser">Eraser</button>
-        <button id="clear">Clear</button>
-        <label id="borders-label"><input type="checkbox" checked="true" id="borders">Borders</label>
-    </div>
-    <div id="container"></div>
+    <header>
+        <h1 class="title">Etch-A-Sketch</h1>
+    </header>
+    <main>
+        <div id="buttons">
+            <label id="slider-label"></label>
+            <input type="range" min="1" max="64" value="10" id="slider">
+            <button id="grey">Classic</button>
+            <button id="rainbow">Rainbow</button>
+            <button id="eraser">Eraser</button>
+            <button id="clear">Clear</button>
+            <label id="borders-label"><input type="checkbox" checked="true" id="borders">Borders</label>
+        </div>
+        <div id="container"></div>
+    </main>
+    <footer>
+        <p class="credits">
+            Created by
+            <a class="github-link" href="https://github.com/nicu420" target="_blank">
+                nicu420
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </p>
+    </footer>
 </body>
 
 </html>

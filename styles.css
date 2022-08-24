@@ -1,25 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
     box-sizing: border-box;
+
 }
 
 body {
+    height: 95vh;
+    padding: 0 10vw;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+main {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height: 95vh;
-    padding: 0 10vw;
+}
+
+label {
+    font-family: 'Open Sans';
+    text-align: center;
 }
 
 #buttons {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 20px;
 }
 
 #buttons button {
-    margin-bottom: 5vh;
     width: 300px;
     height: 50px;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 #container {
@@ -28,4 +49,67 @@ body {
     max-width: 70vh;
     max-height: 70vh;
     border: 1px solid;
+    margin: 0;
+    padding: 0;
+}
+
+#slider {
+    margin-top: -10px;
+    margin-bottom: 3px;
+    -webkit-appearance: none;
+    background-color: rgb(220, 220, 220);
+    opacity: 0.7;
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+}
+
+#slider:hover {
+    opacity: 1;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+}
+
+#borders-label {
+    cursor: pointer;
+}
+
+#borders {
+    width: 20px;
+}
+
+#borders-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Open Sans';
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.credits {
+    font-family: "Open Sans";
+}
+
+.github-link {
+    text-decoration: none;
+}
+
+.github-link:visited {
+    color: initial;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
 }
