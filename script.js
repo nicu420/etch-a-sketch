@@ -62,3 +62,12 @@ function erase() {
         divs[i].addEventListener('mouseover', () => divs[i].style.backgroundColor = "transparent");
     }
 }
+
+// clear
+const clear = document.querySelector('#clear');
+clear.addEventListener('click', clean);
+function clean() {
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].style.backgroundColor = "transparent";
+    }
+}
