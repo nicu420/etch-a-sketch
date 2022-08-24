@@ -28,9 +28,18 @@ function generate() {
     for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
         const div = document.createElement('div');
         div.classList.add('square');
-        div.addEventListener("mouseover", () => div.style.backgroundColor = "grey");
-        div.style.border = "1px solid";
-        borders.checked = "true";
+        div.addEventListener("mouseover", () => {
+            if (role === 'grey') {
+                div.style.backgroundColor = "grey";
+            } else if (role === 'transparent') {
+                div.style.backgroundColor = "transparent";
+            } else {
+                div.style.backgroundColor = colorString();
+                role = '';
+            }
+        });
+        borders.checked = bordersOn;
+        div.style.border = bordersOn ? "1px solid" : "";
         divs.push(div);
         container.appendChild(div);
     }
@@ -46,7 +55,10 @@ const grey = document.querySelector('#grey');
 grey.addEventListener('click', classic);
 function classic() {
     for (let i = 0; i < divs.length; i++) {
-        divs[i].addEventListener('mouseover', () => divs[i].style.backgroundColor = "grey");
+        divs[i].addEventListener('mouseover', () => {
+            divs[i].style.backgroundColor = "grey";
+            role = "grey";
+        });
     }
 }
 
@@ -56,9 +68,13 @@ rainbow.addEventListener('click', randomColor);
 function randomColor() {
     for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener("mouseover", () => {
-            divs[i].style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`
+            divs[i].style.backgroundColor = colorString();
+            role = '';
         });
     }
+}
+function colorString() {
+    return `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
 }
 function randomRGB() {
     return Math.floor(Math.random() * 256);
@@ -70,6 +86,7 @@ eraser.addEventListener('click', erase);
 function erase() {
     for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener('mouseover', () => divs[i].style.backgroundColor = "transparent");
+        role = 'transparent';
     }
 }
 
@@ -94,6 +111,10 @@ borders.addEventListener('change', () => {
             divs[i].style.border = "1px solid";
         }
     }
+    bordersOn = borders.checked;
 })
+
+let bordersOn = borders.checked;
+let role = 'grey';
 
 generate();
