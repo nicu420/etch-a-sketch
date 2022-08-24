@@ -1,9 +1,9 @@
 let divs = [];
 const container = document.querySelector('#container');
 
-const button = document.querySelector('#ask');
+const ask = document.querySelector('#ask');
 
-button.addEventListener("click", generate);
+ask.addEventListener("click", generate);
 
 function generate() {
     // clear dom element
@@ -22,7 +22,7 @@ function generate() {
     for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
         const div = document.createElement('div');
         div.classList.add('square');
-        div.addEventListener("mouseover", () => color(div));
+        div.addEventListener("mouseover", () => div.style.backgroundColor = "grey");
         divs.push(div);
         container.appendChild(div);
     }
@@ -33,6 +33,32 @@ function generate() {
     container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr`;
 }
 
-function color(div) {
-    div.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+// grey
+const grey = document.querySelector('#grey');
+grey.addEventListener('click', classic);
+function classic() {
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('mouseover', () => divs[i].style.backgroundColor = "grey");
+    }
+}
+
+// rainbow 
+const rainbow = document.querySelector('#rainbow');
+rainbow.addEventListener('click', randomColor);
+function randomColor() {
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener("mouseover", () => {
+            divs[i].style.backgroundColor =
+                '#' + Math.floor(Math.random() * 16777215).toString(16);
+        });
+    }
+}
+
+// eraser
+const eraser = document.querySelector("#eraser");
+eraser.addEventListener('click', erase);
+function erase() {
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('mouseover', () => divs[i].style.backgroundColor = "transparent");
+    }
 }
