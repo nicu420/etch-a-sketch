@@ -16,6 +16,9 @@ function generate() {
 
     // ask for number and generate
     let numberOfSquares = parseInt(prompt('Enter a number of squares (0-100)'));
+    while (numberOfSquares < 0 || numberOfSquares > 100) {
+        numberOfSquares = parseInt(prompt('Enter a number of squares (0-100)'));
+    }
     for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
         const div = document.createElement('div');
         div.classList.add('square');
