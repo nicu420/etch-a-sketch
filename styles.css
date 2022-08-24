@@ -73,11 +73,7 @@ label {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: red;
-    cursor: pointer;
-}
-
-#borders-label {
+    background-color: rgb(0, 117, 255);
     cursor: pointer;
 }
 
@@ -89,6 +85,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .title {
