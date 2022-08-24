@@ -48,10 +48,12 @@ rainbow.addEventListener('click', randomColor);
 function randomColor() {
     for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener("mouseover", () => {
-            divs[i].style.backgroundColor =
-                '#' + Math.floor(Math.random() * 16777215).toString(16);
+            divs[i].style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`
         });
     }
+}
+function randomRGB() {
+    return Math.floor(Math.random() * 256);
 }
 
 // eraser
@@ -68,6 +70,6 @@ const clear = document.querySelector('#clear');
 clear.addEventListener('click', clean);
 function clean() {
     for (let i = 0; i < divs.length; i++) {
-        divs[i].style.backgroundColor = "transparent";
+        divs[i].style.backgroundColor = "";
     }
 }
