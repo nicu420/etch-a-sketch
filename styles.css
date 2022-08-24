@@ -2,7 +2,7 @@
 
 * {
     box-sizing: border-box;
-
+    color: rgb(50, 50, 50);
 }
 
 body {
@@ -100,10 +100,6 @@ label {
 
 .github-link {
     text-decoration: none;
-}
-
-.github-link:visited {
-    color: initial;
 }
 
 footer {
