@@ -57,9 +57,9 @@ function classic() {
     for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener('mouseover', () => {
             divs[i].style.backgroundColor = "grey";
-            role = "grey";
         });
     }
+    role = "grey";
 }
 
 // rainbow 
@@ -69,9 +69,9 @@ function randomColor() {
     for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener("mouseover", () => {
             divs[i].style.backgroundColor = colorString();
-            role = '';
         });
     }
+    role = '';
 }
 function colorString() {
     return `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
@@ -86,8 +86,8 @@ eraser.addEventListener('click', erase);
 function erase() {
     for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener('mouseover', () => divs[i].style.backgroundColor = "transparent");
-        role = 'transparent';
     }
+    role = 'transparent';
 }
 
 // clear
