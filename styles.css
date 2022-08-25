@@ -6,20 +6,19 @@
 }
 
 body {
-    height: 95vh;
-    padding: 0 10vw;
     background-color: rgb(240, 240, 240);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: space-around;
 }
 
 main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    height: 80vh;
+    gap: 100px;
 }
 
 label {
@@ -31,11 +30,13 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 4vh;
+    max-width: 25vw;
+    max-height: 60vh;
 }
 
 #buttons button {
-    width: 300px;
+    width: 25vw;
     height: 50px;
     background-color: rgb(240, 240, 240);
     border: 1px solid;
@@ -44,10 +45,8 @@ label {
 }
 
 #container {
-    width: 500px;
-    height: 500px;
-    max-width: 70vh;
-    max-height: 70vh;
+    height: 70vh;
+    width: 70vh;
     border: 1px solid;
     margin: 0;
     padding: 0;
@@ -59,8 +58,8 @@ label {
     -webkit-appearance: none;
     background-color: rgb(220, 220, 220);
     opacity: 0.7;
-    width: 100%;
     height: 15px;
+    width: 25vw;
     border-radius: 10px;
 }
 
@@ -91,7 +90,7 @@ label {
 .title {
     font-family: 'Open Sans';
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 36px;
 }
 
 .credits {
@@ -105,4 +104,11 @@ label {
 footer {
     width: 100%;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+header {
+    height: 11vh;
+    margin-bottom: 5px;
 }
